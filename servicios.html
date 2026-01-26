@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | Matias Ceballos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header" style="position: relative;">
+        <a href="index.html" class="logo">MATIAS CEBALLOS</a>
+        <nav class="desktop-nav">
+            <a href="servicios.html" class="active">SERVICIOS</a>
+            <a href="portafolio.html">PORTAFOLIO</a>
+            <a href="sobre-mi.html">ACERCA DE</a>
+            <a href="contacto.html">CONTACTO</a>
+            <a href="agendar.html">AGENDAR</a>
+        </nav>
+        <div class="hamburger-icon" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">INICIO</a>
+        <a href="portafolio.html">PORTAFOLIO</a>
+        <a href="sobre-mi.html">ACERCA DE</a>
+        <a href="contacto.html">CONTACTO</a>
+        <a href="agendar.html">AGENDAR</a>
+        <a href="#" onclick="toggleMenu()">CERRAR</a>
+    </div>
+
+    <div class="page-container">
+        <h1 class="page-title">SERVICIOS</h1>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>HEADSHOT</h3>
+                <p>Sesión individual para perfil profesional. 1 hora de estudio o locación. 5 fotos editadas.</p>
+                <a href="agendar.html" class="service-link">AGENDAR</a>
+            </div>
+            <div class="service-card">
+                <h3>EDITORIAL</h3>
+                <p>Para marca personal y prensa. 3 horas, cambios de look y dirección de arte.</p>
+                <a href="agendar.html" class="service-link">AGENDAR</a>
+            </div>
+            <div class="service-card">
+                <h3>GRUPAL</h3>
+                <p>Equipos de trabajo o tesis. Composición formal y edición de alta gama.</p>
+                <a href="agendar.html" class="service-link">AGENDAR</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+       <a href="mailto:usuario@itam.mx">matceb@icloud.com</a>
+        <p>55 36777672</p>
+        <p>© 2026 MATIAS CEBALLOS</p>
+    </footer>
+
+    <script>function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }</script>
+</body>
+</html>

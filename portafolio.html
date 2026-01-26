@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Matias Ceballos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header" style="position: relative;">
+        <a href="index.html" class="logo">MATIAS CEBALLOS</a>
+        <nav class="desktop-nav">
+            <a href="servicios.html">SERVICIOS</a>
+            <a href="portafolio.html" class="active">PORTAFOLIO</a>
+            <a href="sobre-mi.html">ACERCA DE</a>
+            <a href="contacto.html">CONTACTO</a>
+            <a href="agendar.html">AGENDAR</a>
+        </nav>
+        <div class="hamburger-icon" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">INICIO</a> 
+        <a href="servicios.html">SERVICIOS</a>
+        <a href="sobre-mi.html">ACERCA DE</a>
+        <a href="contacto.html">CONTACTO</a>
+        <a href="agendar.html">AGENDAR</a>
+        <a href="#" onclick="toggleMenu()">CERRAR</a>
+    </div>
+
+    <div class="page-container">
+        <h1 class="page-title">PORTAFOLIO</h1>
+        
+        <div class="masonry-grid">
+            <div class="grid-item tall">
+                <img src="DSC_5158.jpg" alt="Foto Portafolio 1">
+            </div>
+            
+            <div class="grid-item">
+                <img src="DSC_6613.jpg" alt="Foto Portafolio 2">
+            </div>
+
+            <div class="grid-item wide">
+                <img src="DSC_6625.jpg" alt="Foto Portafolio 3">
+            </div>
+
+            <div class="grid-item big">
+                <img src="L1108755.jpg" alt="Foto Portafolio 4">
+            </div>
+
+            <div class="grid-item wide">
+                <img src="IMG_9913.jpg" alt="Foto Portafolio 5">
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <a href="mailto:usuario@itam.mx">matceb@icloud.com</a>
+        <p>55 36777672</p>
+        <p>© 2026 MATIAS CEBALLOS</p>
+    </footer>
+
+    <script>function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Matias Ceballos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header" style="position: relative;">
+        <a href="index.html" class="logo">MATIAS CEBALLOS</a>
+        <nav class="desktop-nav">
+            <a href="servicios.html">SERVICIOS</a>
+            <a href="portafolio.html">PORTAFOLIO</a>
+            <a href="sobre-mi.html">SOBRE MÍ</a>
+            <a href="contacto.html" class="active">CONTACTO</a>
+            <a href="agendar.html">AGENDAR</a>
+        </nav>
+        <div class="hamburger-icon" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">INICIO</a>
+        <a href="servicios.html">SERVICIOS</a>
+        <a href="portafolio.html">PORTAFOLIO</a>
+        <a href="sobre-mi.html">SOBRE MÍ</a>
+        <a href="contacto.html">CONTACTO</a>
+        <a href="agendar.html">AGENDAR</a>
+        <a href="#" onclick="toggleMenu()">CERRAR</a>
+    </div>
+
+    <div class="page-container">
+        
+        <div class="contact-split">
+            <div class="contact-info-col">
+                <h1 class="page-title" style="text-align: left; margin-bottom: 40px;">CONTACTO</h1>
+                
+                <div class="contact-grid">
+                    <div class="contact-block">
+                        <h3>EMAIL</h3>
+                        <a href="mailto:matceb@icloud.com" class="text-link">matceb@icloud.com</a>
+                    </div>
+
+                    <div class="contact-block">
+                        <h3>WHATSAPP</h3>
+                        <a href="https://wa.me/525536777672" target="_blank" class="text-link">55 3677 7672</a>
+                    </div>
+                    
+                    <div class="contact-block">
+                        <h3>INSTAGRAM</h3>
+                        <a href="https://www.instagram.com/matceb/?hl=es" target="_blank" class="text-link">@matceb</a>
+                    </div>
+
+                    <div class="contact-block">
+                        <h3>ESTUDIO</h3>
+                        <p class="text-plain">San Ángel, CDMX<br><span style="font-size: 0.8rem; color: #666;">(Solo con cita previa)</span></p>
+                    </div>
+                </div>
+
+                <div class="cta-box-left">
+                    <p>¿Listo para comenzar un proyecto?</p>
+                    <a href="agendar.html" class="btn-main">RESERVAR FECHA</a>
+                </div>
+            </div>
+
+            <div class="contact-image-col">
+                <img src="contacto.jpg" alt="Estudio Matias Ceballos">
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <a href="mailto:matceb@icloud.com">MATCEB@ICLOUD.COM</a>
+        <p>© 2026 MATIAS CEBALLOS</p>
+    </footer>
+
+    <script>function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }</script>
+</body>
+</html>

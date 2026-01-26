@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar | Matias Ceballos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo">MATIAS CEBALLOS</a>
+        <nav class="desktop-nav">
+            <a href="servicios.html">SERVICIOS</a>
+            <a href="portafolio.html">PORTAFOLIO</a>
+            <a href="sobre-mi.html">ACERCA DE</a>
+            <a href="contacto.html">CONTACTO</a>
+            <a href="agendar.html" class="active">AGENDAR</a>
+        </nav>
+        <div class="hamburger-icon" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">INICIO</a>
+        <a href="servicios.html">SERVICIOS</a>
+        <a href="portafolio.html">PORTAFOLIO</a>
+        <a href="sobre-mi.html">ACERCA DE</a>
+        <a href="contacto.html">CONTACTO</a>
+        <a href="agendar.html">AGENDAR</a>
+        <a href="#" onclick="toggleMenu()">CERRAR</a>
+    </div>
+
+    <div class="page-container">
+        <h1 class="page-title">AGENDAR CITA</h1>
+        
+        <form id="bookingForm" class="booking-wrapper">
+            
+            <div class="booking-col">
+                <div class="input-group">
+                    <label>NOMBRE COMPLETO</label>
+                    <input type="text" name="nombre" required>
+                </div>
+                <div class="input-group">
+                    <label>WHATSAPP</label>
+                    <input type="tel" name="whatsapp" required>
+                </div>
+                <div class="input-group">
+                    <label>TIPO DE SESIÓN</label>
+                    <select name="tipo">
+                        <option value="Headshot">HEADSHOT CORPORATIVO</option>
+                        <option value="Editorial">EDITORIAL</option>
+                        <option value="Grupo">GRUPAL</option>
+                    </select>
+                    </div>
+
+                <div class="input-group" style="margin-top: 40px;">
+                    <label>HORA DE INICIO</label>
+                    <div class="time-grid">
+                        <div class="time-slot" onclick="selectTime(this, '13:00')">13:00</div>
+                        <div class="time-slot" onclick="selectTime(this, '14:00')">14:00</div>
+                        <div class="time-slot" onclick="selectTime(this, '15:00')">15:00</div>
+                        <div class="time-slot" onclick="selectTime(this, '16:00')">16:00</div>
+                        <div class="time-slot" onclick="selectTime(this, '17:00')">17:00</div>
+                        <div class="time-slot" onclick="selectTime(this, '18:00')">18:00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-col">
+                <div id="inline-calendar-container"></div>
+            </div>
+
+            <input type="hidden" name="fecha" id="fecha-real" required>
+            <input type="hidden" name="hora" id="hora-real" required>
+        </form>
+
+        <button type="submit" form="bookingForm" class="btn-full">CONFIRMAR SOLICITUD</button>
+        <p id="form-status" style="display:none; text-align:center; margin-top:20px; color:#0f0; font-weight:bold;">¡ENVIADO!</p>
+    </div>
+
+    <footer>
+       <a href="mailto:usuario@itam.mx">matceb@icloud.com</a>
+        <p>55 36777672</p>
+        <p>© 2026 MATIAS CEBALLOS</p>
+    </footer>
+
+    <script>
+        function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
+
+        flatpickr.l10ns.es.firstDayOfWeek = 0; 
+        const fechasOcupadas = ["2026-02-14", "2026-02-20"];
+
+        flatpickr("#inline-calendar-container", {
+            inline: true,
+            locale: "es",            
+            enableTime: false, 
+            minDate: "today",        
+            dateFormat: "d-m-Y",
+            disable: [
+                function(date) { return (date.getDay() === 0); }, 
+                function(date) { return fechasOcupadas.includes(date.toISOString().split('T')[0]); }
+            ],
+            onChange: function(selectedDates) {
+                if (selectedDates.length > 0) {
+                    const f = selectedDates[0];
+                    document.getElementById('fecha-real').value = f.toLocaleDateString('es-MX');
+                }
+            }
+        });
+
+        function selectTime(element, time) {
+            document.querySelectorAll('.time-slot').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+            document.getElementById('hora-real').value = time;
+        }
+
+        const form = document.forms['bookingForm'];
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyrFbpq6pQIQW6xhN1aizYRic3ZFhH7ynGHx6AHuXs6w_xNPrH2XMofL4oIIL9DOgIRHA/exec'; 
+
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          if(!document.getElementById('fecha-real').value) { alert("Selecciona una fecha."); return; }
+          if(!document.getElementById('hora-real').value) { alert("Selecciona una hora."); return; }
+          const btn = document.querySelector('.btn-full');
+          btn.innerText = "ENVIANDO...";
+          btn.disabled = true;
+
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(() => {
+                document.getElementById('form-status').style.display = 'block'; 
+                form.reset(); 
+                document.querySelectorAll('.time-slot').forEach(el => el.classList.remove('selected'));
+                btn.innerText = "ENVIADO";
+                setTimeout(() => { btn.innerText = "CONFIRMAR SOLICITUD"; btn.disabled = false; document.getElementById('form-status').style.display='none';}, 3000);
+            })
+            .catch(error => console.error('Error!', error.message))
+        });
+    </script>
+</body>
+</html>
