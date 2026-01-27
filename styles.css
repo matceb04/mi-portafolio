@@ -89,36 +89,67 @@ ul { list-style: none; }
 /* !!! PORTAFOLIO MODIFICADO (ASPECT RATIO ORIGINAL) !!! */
 /* ================================================================= */
 
+/* ================================================================= */
+/* !!! PORTAFOLIO: GRID INTELIGENTE !!! */
+/* ================================================================= */
+
 .masonry-grid {
-    /* Usamos columnas CSS en lugar de Grid para respetar alturas */
-    column-count: 3; 
-    column-gap: 0px;
-    width: 100%;
+    display: grid;
+    /* Crea columnas flexibles de mínimo 250px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* 'dense' es magia: intenta rellenar huecos vacíos reordenando si es necesario */
+    grid-auto-flow: dense; 
+    gap: 15px;
 }
 
 .grid-item {
     background: #111;
     overflow: hidden;
-    /* Evita que una imagen se corte entre columnas */
-    break-inside: avoid-column; 
-    display: inline-block; /* Necesario para que break-inside funcione */
+    position: relative;
+    /* Por defecto, las fotos son cuadradas o verticales según su contenido, 
+       pero aquí forzamos que ocupen todo el espacio de su celda */
     width: 100%;
-    margin-bottom: 0px; /* Espacio inferior entre fotos */
+    height: 100%; 
+    min-height: 400px; /* Altura base para las verticales */
 }
 
+/* CLASE PARA FOTOS HORIZONTALES (Ocupan 2 espacios) */
+.grid-item.wide {
+    grid-column: span 2; /* Se estira a lo ancho 2 columnas */
+    aspect-ratio: 16/9;  /* Mantiene proporción de cine (opcional) */
+}
+
+/* CLASE PARA FOTOS GIGANTES (Ocupan 2x2) */
+.grid-item.big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* CLASE PARA FOTOS VERTICALES ALTAS (Ocupan 2 filas hacia abajo) */
+.grid-item.tall {
+    grid-row: span 2;
+}
+
+/* IMAGEN */
 .grid-item img {
     width: 100%;
-    height: auto !important; /* Mantiene la proporción original */
-    display: block; /* Elimina espacio fantasma debajo de la imagen */
+    height: 100%;
+    object-fit: cover; /* CLAVE: Recorta la imagen para llenar la caja sin estirarse */
     transition: 0.5s;
-    filter: grayscale(0%); /* Blanco y negro inicial */
+    filter: grayscale(100%); /* Blanco y negro por defecto */
 }
 
 .grid-item:hover img {
-    /* transform: scale(1.05);  <-- ZOOM ELIMINADO */
-    filter: grayscale(0%); /* Solo color al pasar el mouse */
+    filter: grayscale(0%); /* Color al pasar el mouse */
 }
 
+/* Ajuste Móvil: En pantallas pequeñas, todo es de 1 columna */
+@media (max-width: 768px) {
+    .grid-item.wide, .grid-item.big { 
+        grid-column: span 1 !important; /* Anula el efecto ancho en celular */
+        aspect-ratio: auto !important;
+    }
+}
 /* NOTA: Con este sistema de columnas, las clases .wide, .tall y .big 
    del HTML ya no son necesarias para el layout, el navegador acomoda 
    las fotos según su tamaño real. */
