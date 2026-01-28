@@ -343,3 +343,165 @@ footer p { color: #666; font-size: 0.8rem; margin-top: 20px; }
         text-align: center;
     }
 }
+
+/* ========================================= */
+/* !!! AGREGAR AL FINAL DE STYLES.CSS !!! */
+/* ========================================= */
+
+/* Subtítulos de sección */
+.section-subtitle {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    color: #fff;
+    border-left: 3px solid #fff;
+    padding-left: 15px;
+}
+
+/* Tarjetas de Precios (Modificación Dark) */
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 500px;
+}
+
+.pricing-card h3 {
+    margin-bottom: 5px; /* Reducir margen para el subtitulo */
+}
+
+.plan-desc {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 30px;
+    line-height: 1;
+}
+
+.price .currency {
+    font-size: 1rem;
+    font-weight: 700;
+    vertical-align: top;
+    color: #666;
+}
+
+/* Lista de características */
+.service-list {
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.service-list li {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    font-weight: 300;
+}
+
+.service-list li::before {
+    content: "•";
+    color: white;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.service-list strong {
+    color: white;
+    font-weight: 700;
+}
+
+/* Borde destacado para el plan de en medio (opcional) */
+.featured-border {
+    border-color: #666;
+    background: linear-gradient(to bottom right, #111, #000);
+}
+
+/* --- SECCIÓN EVENTOS (WIDE CARD) --- */
+.new-badge {
+    background: white;
+    color: black;
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    vertical-align: middle;
+    margin-left: 10px;
+    border-radius: 2px;
+}
+
+.event-card-wide {
+    border: 1px solid #333;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    background: #050505; /* Un negro ligeramente diferente para separar */
+}
+
+.event-info { flex: 3; min-width: 300px; }
+.event-features { flex: 2; min-width: 250px; border-left: 1px solid #333; padding-left: 40px; }
+
+.event-desc {
+    font-size: 1.1rem;
+    color: #999;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.event-pricing-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.price-small {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: white;
+}
+
+.price-note {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 700;
+}
+
+.event-features h4 {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+/* FAQ Mini */
+.faq-mini-grid {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    border-top: 1px solid #222;
+    padding-top: 40px;
+}
+
+.faq-mini-grid h4 { font-size: 0.9rem; font-weight: 800; color: white; margin-bottom: 10px; }
+.faq-mini-grid p { font-size: 0.9rem; color: #666; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .event-card-wide { flex-direction: column; gap: 30px; padding: 30px; }
+    .event-features { border-left: none; padding-left: 0; border-top: 1px solid #333; padding-top: 30px; }
+    .price { font-size: 2.5rem; }
+}

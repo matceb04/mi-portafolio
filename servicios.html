@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="site-header" style="position: relative;">
+    <header class="site-header">
         <a href="index.html" class="logo">MATIAS CEBALLOS</a>
         <nav class="desktop-nav">
             <a href="servicios.html" class="active">SERVICIOS</a>
@@ -21,6 +21,7 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <a href="index.html">INICIO</a>
+        <a href="servicios.html">SERVICIOS</a>
         <a href="portafolio.html">PORTAFOLIO</a>
         <a href="sobre-mi.html">ACERCA DE</a>
         <a href="contacto.html">CONTACTO</a>
@@ -31,28 +32,119 @@
     <div class="page-container">
         <h1 class="page-title">SERVICIOS</h1>
         
+        <h2 class="section-subtitle">ESTUDIO & EDITORIAL</h2>
+        
         <div class="services-grid">
-            <div class="service-card">
-                <h3>HEADSHOT</h3>
-                <p>Sesión individual para perfil profesional. 1 hora de estudio o locación. 5 fotos editadas.</p>
-                <a href="agendar.html" class="service-link">AGENDAR</a>
+            
+            <div class="service-card pricing-card">
+                <div class="card-header">
+                    <h3>FOTO RÁPIDA</h3>
+                    <span class="plan-desc">Tesis / LinkedIn / CV</span>
+                </div>
+                <div class="price">$500 <span class="currency">MXN</span></div>
+                <ul class="service-list">
+                    <li>Sesión Express</li>
+                    <li>Fondo liso (Blanco/Gris)</li>
+                    <li>Entrega Digital</li>
+                    <li>Edición Profesional</li>
+                </ul>
+                <a href="agendar.html" class="service-link">RESERVAR</a>
             </div>
-            <div class="service-card">
-                <h3>EDITORIAL</h3>
-                <p>Para marca personal y prensa. 3 horas, cambios de look y dirección de arte.</p>
-                <a href="agendar.html" class="service-link">AGENDAR</a>
+
+            <div class="service-card pricing-card">
+                <div class="card-header">
+                    <h3>SHOOT PERSONAL</h3>
+                    <span class="plan-desc">Corporativo / Básico</span>
+                </div>
+                <div class="price">$1,800 <span class="currency">MXN</span></div>
+                <ul class="service-list">
+                    <li>Sesión en Estudio (45 min)</li>
+                    <li>1 Cambio de look</li>
+                    <li>Retoque High-End</li>
+                    <li>Entrega Digital</li>
+                </ul>
+                <a href="agendar.html" class="service-link">RESERVAR</a>
             </div>
-            <div class="service-card">
-                <h3>GRUPAL</h3>
-                <p>Equipos de trabajo o tesis. Composición formal y edición de alta gama.</p>
-                <a href="agendar.html" class="service-link">AGENDAR</a>
+
+            <div class="service-card pricing-card featured-border">
+                <div class="card-header">
+                    <h3>EDITORIAL</h3>
+                    <span class="plan-desc">Branding / Portfolio</span>
+                </div>
+                <div class="price">$3,200 <span class="currency">MXN</span></div>
+                <ul class="service-list">
+                    <li>Sesión Creativa (1.5 Horas)</li>
+                    <li>3 Cambios de look</li>
+                    <li>Guía de poses y dirección</li>
+                    <li>Retoque High-End + Selección</li>
+                </ul>
+                <a href="agendar.html" class="service-link">RESERVAR</a>
+            </div>
+
+            <div class="service-card pricing-card">
+                <div class="card-header">
+                    <h3>CAMPAÑA</h3>
+                    <span class="plan-desc">Producción / Grupal</span>
+                </div>
+                <div class="price">$6,500+ <span class="currency">MXN</span></div>
+                <ul class="service-list">
+                    <li>Media Jornada (4 Horas)</li>
+                    <li>Iluminación Avanzada</li>
+                    <li>Tethering</li>
+                    <li>Material Editado</li>
+                </ul>
+                <a href="contacto.html" class="service-link">COTIZAR</a>
             </div>
         </div>
+
+        <div style="margin-top: 100px;">
+            <h2 class="section-subtitle">COBERTURA DE EVENTOS <span class="new-badge">NUEVO</span></h2>
+            
+            <div class="event-card-wide">
+                <div class="event-info">
+                    <h3>SOCIAL & PR</h3>
+                    <p class="event-desc">Documentación estética con enfoque "candid" (natural). Capturamos la atmósfera, los invitados y los momentos clave sin interrumpir el flujo del evento.</p>
+                    
+                    <div class="event-pricing-row">
+                        <div>
+                            <span class="price-small">$2,200</span> / hora
+                            <div class="price-note">(Mínimo 2 horas)</div>
+                        </div>
+                        <div style="border-left: 1px solid #333; padding-left: 20px;">
+                            <span class="price-small">$7,500</span>
+                            <div class="price-note">Media Jornada (4h)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-features">
+                    <h4>INCLUYE:</h4>
+                    <ul class="service-list">
+                        <li>Galería completa (Color & Luz)</li>
+                        <li><strong>Preview Express:</strong> Selección rápida en 24hrs</li>
+                        <li>Entrega final en 5 días hábiles</li>
+                    </ul>
+                    <a href="contacto.html" class="btn-outline" style="margin-top: 20px;">COTIZAR FECHA</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-mini-grid">
+            <div>
+                <h4>¿CÓMO RESERVO?</h4>
+                <p>Se requiere el 50% de anticipo para bloquear la fecha.</p>
+            </div>
+            <div>
+                <h4>¿ENTREGAN TODO?</h4>
+                <p>En <strong>Eventos</strong> sí. En <strong>Retratos</strong> solo la selección editada.</p>
+            </div>
+        </div>
+
     </div>
 
     <footer>
-       <a href="mailto:usuario@itam.mx">matceb@icloud.com</a>
-        <p>55 36777672</p>
+        <a href="mailto:matceb@icloud.com">matceb@icloud.com</a>
+        <p>55 3677 7672</p>
         <p>© 2026 MATIAS CEBALLOS</p>
     </footer>
 
