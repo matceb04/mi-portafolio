@@ -37,7 +37,7 @@ ul { list-style: none; }
 .mobile-menu.active { transform: translateY(0); }
 .mobile-menu a { font-size: 2rem; font-weight: 900; }
 
-/* ================= PORTADA ================= */
+/* ================ TADA ================= */
 .hero-screen {
     height: 100vh; width: 100%;
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('portada-pc.jpg');
@@ -136,7 +136,7 @@ ul { list-style: none; }
     height: 100%;
     object-fit: cover; /* CLAVE: Recorta la imagen para llenar la caja sin estirarse */
     transition: 0.5s;
-    filter: grayscale(100%); /* Blanco y negro por defecto */
+    
 }
 
 .grid-item:hover img {
@@ -273,7 +273,7 @@ footer p { color: #666; font-size: 0.8rem; margin-top: 20px; }
     width: 100%;
     height: 100%;
     object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformar */
-    filter: grayscale(100%);
+    filter: grayscale(0.2s);
     transition: 0.5s;
 }
 
