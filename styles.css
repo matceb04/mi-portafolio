@@ -130,6 +130,11 @@ ul { list-style: none; }
     grid-row: span 2;
 }
 
+.grid-item.ultrawide {
+    grid-column: span 4; /* Ocupa 3 columnas */
+    aspect-ratio: 4/3;   /* Proporción ultra ancha */
+}
+
 /* IMAGEN */
 .grid-item img {
     width: 100%;
